@@ -1,0 +1,213 @@
+body {
+    background-color:#fff8f1 ;
+    margin: 0;
+     padding-top: 120px; 
+}
+header {
+    position: fixed;        /* Saca el menú de su caja y lo fija en la pantalla */
+    top: 0;                 /* Lo pega arriba del todo */
+    left: 0;                /* Lo alinea al extremo izquierdo */
+    width: 100%;            /* Hace que cubra todo el ancho de la pantalla */
+    z-index: 1030;          /* Pasa por encima del carrusel de Bootstrap (1.2.1) */
+    background-color:#fff8f1 ; /* Mismo fondo crema de tu body para que no transparente */
+    
+}
+
+/* Modificamos la navbar para que mantenga sus espacios */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    max-width: 1200px;     /* Opcional: Centra el contenido en pantallas gigantes */
+    margin: 0 auto;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+
+/* Logo */
+.logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+/* Menú */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    background-color: #FFB6C1;
+    padding: 15px 35px;
+    border-radius: 30px;
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: black;
+    font-weight: bold;
+}
+.menu a.nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+/* carrusel */
+#carouselExampleIndicators {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;       /* Permite que la altura se adapte a la proporción real de la imagen */
+    max-height: 500px;  /* Evita que la imagen sea excesivamente gigante en pantallas grandes */
+    object-fit: contain; /* Ajusta la imagen completa dentro del espacio disponible sin recortarla */
+}
+/* secion menu */
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #a45d83;
+     gap: 60px;
+    font-weight: bold;
+    margin: 50px 0 20px 0; 
+    padding: 25px 0; 
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  background-color: #fdf5f0; 
+}
+
+.caja {
+  background: #ffffff;
+  border: 1px solid #000000; 
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* AQUÍ ESTÁ EL CAMBIO IMPORTANTES */
+.caja img {
+  width: 100%;          /* Fuerza a la imagen a no salirse de la caja */
+  height: 120px;
+  object-fit: contain;  /* Evita que se estire al limitar el ancho */
+}
+
+.caja h3, .caja p {
+  color:#a45d83 ; 
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* secion nosotros */
+p {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 800px; /* Limita el ancho del bloque de texto */
+    margin: 0 auto;   /* Centra el bloque horizontalmente en la pantalla */
+    gap: 50px;
+}
+
+/* contactos */
+
+footer {
+  background-color:#a45d83 ;
+  color: #ffffff;
+  padding: 25px 0;  
+  
+}
+
+ul.pie {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;         /* CLAVE: Pone los elementos uno al lado del otro */
+  justify-content: center; /* Centra todo el bloque en medio de la franja rosa */
+  gap: 100px;   
+}
+
+/* Aplicamos flexbox directamente al <li> para separar el icono del texto */
+ul.pie li {
+ 
+   display: flex;
+  align-items: center; 
+  justify-self: flex-start; 
+  gap: 15px;           
+  margin: 0;   
+ 
+}
+
+ul.pie img {
+  height: 24px; 
+  width: auto;
+  gap: 20px;
+  align-items: center;
+  margin: 40px 0; 
+
+}
+
+/* reponsive */
+@media (max-width: 768px) {
+    /* 1. Hace que la barra de navegación se vuelva vertical */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    /* Reducimos un poco el logo en pantallas chicas */
+    .logo img {
+        height: 70px;
+    }
+
+    /* Modifica los botones del menú para que no se amontonen */
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px 25px;
+        gap: 15px;
+    }
+
+    /* 2. Hace que las 3 cajas del menú se pongan una debajo de otra */
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .caja {
+        width: 85%; /* Se estiran para aprovechar mejor el espacio del celular */
+        max-width: 280px;
+    }
+
+    /* Reducimos el tamaño de letra de "Nosotros" para que quepa bien en el celular */
+    p {
+        font-size: 1.1em;
+    }
+
+    /* 3. Hace que los datos del footer se pongan uno debajo de otro */
+    ul.pie {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
